@@ -14,4 +14,5 @@ FROM alpine
 RUN apk update && apk add --no-cache ca-certificates
 WORKDIR /app
 COPY --from=build-env /src/chisel /app/chisel
+EXPOSE 8888
 ENTRYPOINT ["/app/chisel"]
