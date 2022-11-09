@@ -15,4 +15,4 @@ RUN apk update && apk add --no-cache ca-certificates
 WORKDIR /app
 COPY --from=build-env /src/chisel /app/chisel
 EXPOSE 8888
-ENTRYPOINT ["/app/chisel"]
+ENTRYPOINT ["/app/chisel","server","-p","8888","--reverse"]
